@@ -1,40 +1,52 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="ja">
 
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P0CP0KYF5L"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-P0CP0KYF5L');
-</script>
-<title>Gao-kyouryuuのページ</title>
-<link rel = "shortcut icon" href = "image/favicon.ico">
-<link rel = "stylesheet" href = "style.css">
-<link rel = "stylesheet" href = "photo.css">
+    <meta charset="UTF-8">
+    <title>ログイン</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div>
+        <h1>ログイン</h1>
+    </div>
 
-<h1 text-align = "center">Gao-kyouryuuトップページ</h1>
+    <div>
 
-<header>
-	<nav class="global-nav">
-	 <ul class="nav-list">
-	  <li class="nav-item"><a href = "index.html">ホーム</a></li>
-	 </ul>
-	</nav>
-</header>
-<br />
+        <!--フォーム-->
+        <form name="login_form">
+            <center>
+                <h1 class="contact-title">ログイン</h1>
+                <p>ID、Passwordをご入力の上、「認証」ボタンをクリックしてください。</p>
+            </center>
+            <div>
 
-<h2>Gao-kyouryuuとは</h2>
-<p>Gao-kyouryuuとは白亜紀にスーパーから玉ねぎを一つ盗んだという悪い噂のある恐竜である。</p><br />
-<p>Scratchをやっているらしいが、嘘の可能性も高い。</p><br />
+                <center>
+                    <div>
+                        <input type="id" name="id" placeholder="ID">
+                    </div>
+                    <br>
+                    <div>
+                        <input type="password" name="pass" placeholder="Password" onchange="nextPage()">
+                    </div>
+                </center>
 
-<a id = "toko"><h2>お知らせ</h2></a><br />
-<p>2020/11/14 このページを作成しました。</p>
+            </div>
+            <button type="button" onClick="nextPage();">認証</button>
+        </form>
+
+        <!--ログイン処理-->
+        <script language="JavaScript" type="text/javascript">
+            function nextPage() {
+                id = document.login_form.id.value
+                pwd = document.login_form.pass.value;
+                location.href = id + pwd + ".html";
+            }
+        </script>
+
+    </div>
+
 </body>
-</html>
 
+</html>
